@@ -1,0 +1,135 @@
+---
+import '../styles/global.css';
+
+const CDN = 'https://cdn.prod.website-files.com/6a0ac20c218847cb8fda17a8';
+
+const logos = [
+  { id: '6a3ad4f5ccdc4ee5bafbcfe1', file: 'Gmail.svg',                 alt: 'Gmail' },
+  { id: '6a3ad4f97c305520a00b8b80', file: 'Microsoft-Outlook.svg',     alt: 'Outlook' },
+  { id: '6a3ad4f8d06dc7535ec8647b', file: 'whatsApp.svg',              alt: 'WhatsApp' },
+  { id: '6a3ad4f8235b349d5b51f5c0', file: 'Zoom1.svg',                 alt: 'Zoom' },
+  { id: '6a3ad913db052f0e42e86f1c', file: 'Google_Meet.svg',           alt: 'Google Meet' },
+  { id: '6a3ad4f791baeac1f4182714', file: 'Slack.svg',                 alt: 'Slack' },
+  { id: '6a3ad4f5448d6ee3218eb267', file: 'Linkedin.svg',              alt: 'LinkedIn' },
+  { id: '6a3ad4f59e962154f7527d43', file: 'facebook.svg',              alt: 'Facebook' },
+  { id: '6a3ad4f6a85a514faec4c79f', file: 'Instagram.svg',             alt: 'Instagram' },
+  { id: '6a3ad4f8cb3f6bcea9929639', file: 'TikTok.svg',                alt: 'TikTok' },
+  { id: '6a3ad4f85db05eff81c7a7db', file: 'Meta.svg',                  alt: 'Meta' },
+  { id: '6a3ad4f52f020a3319e9ec48', file: 'Google-Ads.svg',            alt: 'Google Ads' },
+  { id: '6a3ad4f596ddc1a5c03a1af6', file: 'Google-Calendar.svg',       alt: 'Google Calendar' },
+  { id: '6a3adab5ef6f836ddea2abee', file: 'Microsoft_Outlook_Cal.svg', alt: 'Outlook Calendar' },
+  { id: '6a3ad4f54459112c10f41edc', file: 'Google-Drive.svg',          alt: 'Google Drive' },
+  { id: '6a3ad4f6367eac6eb033e141', file: 'OneDrive.svg',              alt: 'OneDrive' },
+  { id: '6a3ad4f5c633fbc46db78a01', file: 'Dropbox.svg',               alt: 'Dropbox' },
+  { id: '6a3ad4f5e709530836ff99ca', file: 'box.svg',                   alt: 'Box' },
+  { id: '6a3ad4f7235b349d5b51f581', file: 'Stripe.svg',                alt: 'Stripe' },
+  { id: '6a3ad4f65b6ee44d68a02921', file: 'PayPal.svg',                alt: 'PayPal' },
+  { id: '6a3ad4f7ce3e030e2c1ac1dd', file: 'Square.svg',                alt: 'Square' },
+  { id: '6a3ad53ad06dc7535ec88200', file: 'xero.svg',                  alt: 'Xero' },
+  { id: '6a3ad4f85aecd6e4f43f9d94', file: 'QuickBooks.svg',            alt: 'QuickBooks' },
+  { id: '6a3ad4f7765db8167f2f8f89', file: 'Shopify.svg',               alt: 'Shopify' },
+  { id: '6a3ad4f57c84217f295eba2e', file: 'Hubspot.svg',               alt: 'HubSpot' },
+  { id: '6a3ad4f7ecc7f155c8ebae12', file: 'Salesforce.svg',            alt: 'Salesforce' },
+  { id: '6a3ad4f65db05eff81c7a799', file: 'monday-mono.svg',           alt: 'Monday' },
+  { id: '6a3ad4f74eb3b6f627b0fb0b', file: 'Trello.svg',                alt: 'Trello' },
+  { id: '6a3ae31bef6f836ddea5f327', file: 'mailchimp-mono.svg',        alt: 'Mailchimp', light: true },
+  { id: '6a3ad4f95db05eff81c7a834', file: 'Zapier.svg',                alt: 'Zapier' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EX!QT 0S — Run the business you always intended to.</title>
+  <meta name="description" content="One environment for every part of your business. Connected, automated and visible the way it should always have been." />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="os-nav-1-2-3-4">
+    <a href="/" class="os-nav-logo-1-2-3-4">EX!QT 0S</a>
+    <div class="os-nav-links-1-2-3">
+      <a href="#product"  class="os-nav-link-1-2-3-4">Product</a>
+      <a href="#sectors"  class="os-nav-link-1-2-3-4">Sectors</a>
+      <a href="#pricing"  class="os-nav-link-1-2-3-4">Pricing</a>
+      <a href="#about"    class="os-nav-link-1-2-3-4">About</a>
+    </div>
+    <div class="os-nav-actions-1">
+      <a href="#walkthrough" class="os-nav-secondary-1-2">Book walkthrough</a>
+      <a href="#trial"       class="os-nav-cta-1-2-3-4">Start free trial</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="os-hero">
+    <div class="os-hero-inner">
+
+      <h1 class="os-hero-h1-1-2">Run the business you always intended to</h1>
+
+      <div class="orbital-wrap">
+        <div class="stage" id="orbital-stage">
+          <div class="core-glow"></div>
+          <div class="core-bracket">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="core">
+            <div class="core-os">
+              <div class="core-os-zero">
+                <span>0</span>
+                <div class="core-os-dot"></div>
+              </div>
+              <span class="core-os-s">S</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="os-hero-below">
+        <p class="os-hero-body">One operational environment for every part of your business. Connected, automated and visible the way it should always have been.</p>
+        <a href="#trial" class="os-hero-btn-primary">Start free trial — 14 days</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section class="os-recognition">
+    <div class="os-recognition-inner">
+      <p class="os-recognition-statement">Good systems preserve what people cannot get back</p>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="os-integrations" id="integrations">
+    <div class="os-integrations-inner">
+      <h2 class="os-integrations-headline-new">
+        One operational environment.<br />
+        Every platform you already use.<br />
+        Connected.
+      </h2>
+      <div class="os-logo-grid-1-2-3" id="logo-grid">
+        {logos.map(logo => (
+          <div class="os-logo-cell">
+            <img
+              class={logo.light ? 'os-logo-img-light' : 'os-logo-img'}
+              src={`${CDN}/${logo.id}_${logo.file}`}
+              alt={logo.alt}
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="os-integrations-footer-1-2-3">
+        <p class="os-integrations-count-1-2-3">4,000+ connections available. If it exists, it likely connects*</p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline src="/orbital-engine.js"></script>
+
+</body>
+</html>
