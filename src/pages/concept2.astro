@@ -238,6 +238,107 @@ const row2 = [
     </div>
   </section>
 
+  <!-- PRODUCT -->
+  <section class="crm-section" id="product">
+    <div class="crm-section-inner">
+      <div class="crm-section-header">
+        <h2 class="crm-headline">Your pipeline.<br/>Always moving.</h2>
+        <p class="crm-subline">EXIQT 0S automates the follow-through so nothing falls between the cracks.</p>
+      </div>
+      <div class="crm-window">
+        <!-- Browser chrome -->
+        <div class="crm-chrome">
+          <div class="crm-dots">
+            <span class="crm-dot crm-dot-red"></span>
+            <span class="crm-dot crm-dot-yellow"></span>
+            <span class="crm-dot crm-dot-green"></span>
+          </div>
+          <div class="crm-tab-label">Opportunities — EXIQT 0S</div>
+          <div class="crm-address">
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M5 1a3 3 0 00-3 3v1H1.5A.5.5 0 001 5.5v5a.5.5 0 00.5.5h7a.5.5 0 00.5-.5v-5a.5.5 0 00-.5-.5H8V4a3 3 0 00-3-3zm-2 3a2 2 0 014 0v1H3V4z" fill="#6B7280"/></svg>
+            <span>app.exiqt0s</span>
+          </div>
+        </div>
+        <!-- App frame -->
+        <div class="crm-app" id="crm-pipeline">
+          <!-- Sidebar -->
+          <nav class="crm-sidebar">
+            <div class="crm-sidebar-brand">0S</div>
+            <div class="crm-sidebar-nav">
+              <div class="crm-nav-item">Dashboard</div>
+              <div class="crm-nav-item">Conversations</div>
+              <div class="crm-nav-item">Contacts</div>
+              <div class="crm-nav-item crm-nav-active">Opportunities</div>
+              <div class="crm-nav-item">Calendars</div>
+              <div class="crm-nav-item">AI Agents</div>
+              <div class="crm-nav-item">Automation</div>
+              <div class="crm-nav-item">Payments</div>
+            </div>
+          </nav>
+          <!-- Main -->
+          <div class="crm-main">
+            <div class="crm-topbar">
+              <div class="crm-title">Opportunities</div>
+              <div class="crm-tabs">
+                <span class="crm-tab-item crm-tab-active">Opportunities</span>
+                <span class="crm-tab-item">Forecast</span>
+                <span class="crm-tab-item">Pipelines</span>
+              </div>
+            </div>
+            <div class="crm-toolbar">
+              <div class="crm-pipeline-select">Client Acquisition ▾</div>
+              <span class="crm-opp-count" id="opp-count">5 opportunities</span>
+            </div>
+            <div class="crm-pipeline">
+              <div class="crm-stage">
+                <div class="crm-stage-header">
+                  <span class="crm-stage-name">New Enquiry</span>
+                  <span class="crm-stage-count" id="crm-count-new">0</span>
+                </div>
+                <div class="crm-stage-cards" id="crm-cards-new"></div>
+              </div>
+              <div class="crm-stage">
+                <div class="crm-stage-header">
+                  <span class="crm-stage-name">Contacted</span>
+                  <span class="crm-stage-count" id="crm-count-contacted">0</span>
+                </div>
+                <div class="crm-stage-cards" id="crm-cards-contacted"></div>
+              </div>
+              <div class="crm-stage">
+                <div class="crm-stage-header">
+                  <span class="crm-stage-name">Appointment</span>
+                  <span class="crm-stage-count" id="crm-count-appointment">0</span>
+                </div>
+                <div class="crm-stage-cards" id="crm-cards-appointment"></div>
+              </div>
+              <div class="crm-stage">
+                <div class="crm-stage-header">
+                  <span class="crm-stage-name">Proposal</span>
+                  <span class="crm-stage-count" id="crm-count-proposal">0</span>
+                </div>
+                <div class="crm-stage-cards" id="crm-cards-proposal"></div>
+              </div>
+              <div class="crm-stage">
+                <div class="crm-stage-header">
+                  <span class="crm-stage-name">Closed</span>
+                  <span class="crm-stage-count" id="crm-count-closed">0</span>
+                </div>
+                <div class="crm-stage-cards" id="crm-cards-closed"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Toast -->
+        <div class="crm-toast" id="crm-toast">
+          <div class="crm-toast-inner">
+            <span class="crm-toast-dot"></span>
+            <span class="crm-toast-text"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INTEGRATIONS -->
   <section class="os-integrations" id="integrations">
     <div class="os-integrations-inner">
@@ -272,17 +373,7 @@ const row2 = [
   </section>
 
   <script is:inline src="/orbital-engine.js"></script>
-  <script is:inline>
-    window.addEventListener('load', function() {
-      var run = document.querySelector('.c2-h1-run');
-      var node = document.querySelector('.core');
-      var runRect = run.getBoundingClientRect();
-      var nodeRect = node.getBoundingClientRect();
-      console.log('Run bottom (px from top of viewport):', Math.round(runRect.bottom));
-      console.log('Node bottom (px from top of viewport):', Math.round(nodeRect.bottom));
-      console.log('Difference (positive = node is above Run):', Math.round(runRect.bottom - nodeRect.bottom));
-    });
-  </script>
+  <script is:inline src="/pipeline-engine.js"></script>
 
 </body>
 </html>
