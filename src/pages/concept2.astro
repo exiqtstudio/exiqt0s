@@ -372,8 +372,146 @@ const row2 = [
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section class="os-pricing" id="pricing">
+    <div class="os-pricing-inner">
+
+      <div class="os-pricing-header">
+        <p class="os-pricing-eyebrow">Pricing</p>
+        <h2 class="os-pricing-headline">One platform.<br/>Clear pricing.</h2>
+        <p class="os-pricing-subline">Everything your business needs to run properly.<br/>No hidden costs. Cancel anytime.</p>
+      </div>
+
+      <!-- Billing toggle -->
+      <div class="os-pricing-toggle-wrap">
+        <span class="os-toggle-label os-toggle-label-active" id="lbl-monthly">Monthly</span>
+        <button class="os-toggle-btn" id="billing-toggle" aria-pressed="false" aria-label="Switch to annual billing">
+          <span class="os-toggle-thumb"></span>
+        </button>
+        <span class="os-toggle-label" id="lbl-annual">Annual <span class="os-toggle-save">Save 17%</span></span>
+      </div>
+
+      <!-- Cards -->
+      <div class="os-pricing-cards">
+
+        <!-- STARTER -->
+        <div class="os-pricing-card">
+          <div class="os-pricing-card-body">
+            <p class="os-pricing-tier">STARTER</p>
+            <div class="os-pricing-price-wrap">
+              <span class="os-price-currency">$</span>
+              <span class="os-price-amount" data-monthly="149" data-annual="124">149</span>
+              <div class="os-price-right">
+                <span class="os-price-per">/mo</span>
+                <span class="os-price-billing" id="billing-note-0">billed monthly</span>
+              </div>
+            </div>
+            <p class="os-pricing-outcome">The complete operating foundation.</p>
+            <a href="#trial" class="os-pricing-cta os-pricing-cta-ghost">Get started</a>
+            <ul class="os-pricing-features">
+              <li>CRM + pipeline management</li>
+              <li>Automated follow-up sequences</li>
+              <li>Email, SMS + calendar booking</li>
+              <li>Website + funnel hosting</li>
+              <li>Reputation management</li>
+              <li>Sector snapshot included</li>
+              <li>Self-serve onboarding</li>
+              <li>Email support</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- GROWTH — recommended -->
+        <div class="os-pricing-card os-pricing-card-featured">
+          <div class="os-pricing-badge">Recommended</div>
+          <div class="os-pricing-card-body">
+            <p class="os-pricing-tier">GROWTH</p>
+            <div class="os-pricing-price-wrap">
+              <span class="os-price-currency">$</span>
+              <span class="os-price-amount" data-monthly="249" data-annual="207">249</span>
+              <div class="os-price-right">
+                <span class="os-price-per">/mo</span>
+                <span class="os-price-billing" id="billing-note-1">billed monthly</span>
+              </div>
+            </div>
+            <p class="os-pricing-outcome">Full operations. AI included.</p>
+            <a href="#trial" class="os-pricing-cta os-pricing-cta-primary">Get started</a>
+            <ul class="os-pricing-features">
+              <li>Everything in Starter</li>
+              <li>Guided onboarding session</li>
+              <li>AI conversation agents</li>
+              <li>WhatsApp integration</li>
+              <li>Voice AI — after-hours booking</li>
+              <li>24/7 chat support</li>
+              <li>Monthly performance report</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="os-pricing-card">
+          <div class="os-pricing-card-body">
+            <p class="os-pricing-tier">PRO</p>
+            <div class="os-pricing-price-wrap">
+              <span class="os-price-currency">$</span>
+              <span class="os-price-amount" data-monthly="397" data-annual="330">397</span>
+              <div class="os-price-right">
+                <span class="os-price-per">/mo</span>
+                <span class="os-price-billing" id="billing-note-2">billed monthly</span>
+              </div>
+            </div>
+            <p class="os-pricing-outcome">Multi-location. Maximum capability.</p>
+            <a href="#trial" class="os-pricing-cta os-pricing-cta-ghost">Get started</a>
+            <ul class="os-pricing-features">
+              <li>Everything in Growth</li>
+              <li>Up to 3 locations</li>
+              <li>Advanced AI configuration</li>
+              <li>API access</li>
+              <li>Custom automation builds</li>
+              <li>Priority support + live calls</li>
+              <li>Dedicated success contact</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="os-pricing-trust">14 days free. No credit card required.</p>
+
+    </div>
+  </section>
+
   <script is:inline src="/orbital-engine.js"></script>
   <script is:inline src="/pipeline-engine.js"></script>
+
+  <script is:inline>
+    (function () {
+      var annual = false;
+      var toggle = document.getElementById('billing-toggle');
+      var lblMonthly = document.getElementById('lbl-monthly');
+      var lblAnnual = document.getElementById('lbl-annual');
+      var amounts = document.querySelectorAll('.os-price-amount');
+      var notes = document.querySelectorAll('.os-price-billing');
+
+      function update() {
+        toggle.setAttribute('aria-pressed', annual ? 'true' : 'false');
+        toggle.classList.toggle('os-toggle-on', annual);
+        lblMonthly.classList.toggle('os-toggle-label-active', !annual);
+        lblAnnual.classList.toggle('os-toggle-label-active', annual);
+        amounts.forEach(function (el) {
+          el.textContent = annual ? el.dataset.annual : el.dataset.monthly;
+        });
+        notes.forEach(function (el) {
+          el.textContent = annual ? 'billed annually' : 'billed monthly';
+        });
+      }
+
+      toggle.addEventListener('click', function () {
+        annual = !annual;
+        update();
+      });
+    })();
+  </script>
 
 </body>
 </html>

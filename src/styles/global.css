@@ -1135,6 +1135,332 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ════════════════════════════════════════
+   PRICING
+════════════════════════════════════════ */
+.os-pricing {
+  padding: 120px 48px;
+  background: #EDEEF0;
+}
+
+.os-pricing-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.os-pricing-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.os-pricing-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.os-pricing-headline {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--dark);
+}
+
+.os-pricing-subline {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+/* ── Toggle ── */
+.os-pricing-toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.os-toggle-label {
+  font-family: 'Switzer', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.os-toggle-label-active {
+  color: var(--dark);
+}
+
+.os-toggle-save {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dark);
+  background: rgba(14,17,22,0.08);
+  padding: 2px 7px;
+  border-radius: 20px;
+  margin-left: 4px;
+  letter-spacing: 0.01em;
+}
+
+.os-toggle-btn {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.os-toggle-btn.os-toggle-on {
+  background: var(--dark);
+}
+
+.os-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.os-toggle-btn.os-toggle-on .os-toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* ── Cards grid ── */
+.os-pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  align-items: start;
+}
+
+/* ── Card ── */
+.os-pricing-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.9) inset,
+    0 0 0 0.5px rgba(14,17,22,0.06),
+    0 4px 16px rgba(14,17,22,0.06);
+  transition: box-shadow 0.2s;
+}
+
+.os-pricing-card:hover {
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.9) inset,
+    0 0 0 0.5px rgba(14,17,22,0.08),
+    0 8px 32px rgba(14,17,22,0.10);
+}
+
+.os-pricing-card-featured {
+  border: 2px solid var(--dark);
+  box-shadow:
+    0 0 0 0.5px rgba(14,17,22,0.10),
+    0 8px 40px rgba(14,17,22,0.12),
+    0 2px 8px rgba(14,17,22,0.08);
+}
+
+.os-pricing-card-featured:hover {
+  box-shadow:
+    0 0 0 0.5px rgba(14,17,22,0.12),
+    0 12px 48px rgba(14,17,22,0.16),
+    0 2px 8px rgba(14,17,22,0.10);
+}
+
+.os-pricing-badge {
+  background: var(--dark);
+  color: var(--bg);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  text-align: center;
+}
+
+.os-pricing-card-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.os-pricing-tier {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.os-pricing-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.os-price-currency {
+  font-family: 'Switzer', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--dark);
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.os-price-amount {
+  font-family: 'Switzer', sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.os-price-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 4px;
+  padding-bottom: 6px;
+  align-self: flex-end;
+}
+
+.os-price-per {
+  font-family: 'Switzer', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.os-price-billing {
+  font-family: 'Switzer', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--border);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.os-pricing-outcome {
+  font-family: 'Switzer', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* ── CTAs ── */
+.os-pricing-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Switzer', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 20px;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.os-pricing-cta-primary {
+  background: var(--dark);
+  color: var(--bg);
+}
+.os-pricing-cta-primary:hover { opacity: 0.85; }
+
+.os-pricing-cta-ghost {
+  background: transparent;
+  color: var(--dark);
+  border: 1px solid var(--border);
+}
+.os-pricing-cta-ghost:hover {
+  border-color: var(--dark);
+}
+
+/* ── Feature list ── */
+.os-pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.os-pricing-features li {
+  font-family: 'Switzer', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.4;
+  padding-left: 16px;
+  position: relative;
+}
+
+.os-pricing-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.os-pricing-card-featured .os-pricing-features li::before {
+  background: var(--dark);
+  opacity: 0.35;
+}
+
+/* ── Trust line ── */
+.os-pricing-trust {
+  font-family: 'Switzer', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
 @media (max-width: 1024px) {
