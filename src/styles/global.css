@@ -467,7 +467,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .card-logo svg { width: 27px; height: 27px; display: block; opacity: 1; }
-.card-logo[data-logo="outlookcal"] img { width: 28px; height: 28px; }
+.card-logo[data-logo="outlookcal"] img { width: 34px; height: 34px; }
 .card-logo[data-logo="exiqt"] { background: #0D1017; }
 .card-logo[data-logo="exiqt"] img { width: 32px; height: auto; filter: brightness(0.84); opacity: 1; }
 
@@ -567,7 +567,7 @@ a { text-decoration: none; color: inherit; }
 ════════════════════════════════════════ */
 .os-recognition {
   background: #EDEEF0;
-  padding: 100px 48px;
+  padding: 140px 48px;
 }
 
 .os-recognition-inner {
@@ -605,12 +605,50 @@ a { text-decoration: none; color: inherit; }
 }
 
 .os-integrations-headline-new {
-  font-size: clamp(28px, 3.2vw, 48px);
+  font-size: clamp(36px, 5.5vw, 72px);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   color: var(--dark);
-  max-width: 640px;
+  max-width: 800px;
+}
+
+.c2-marquee-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+.c2-marquee-row {
+  display: flex;
+  overflow: hidden;
+}
+
+.c2-marquee-track {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.c2-marquee-left .c2-marquee-track {
+  animation: marquee-left 40s linear infinite;
+}
+
+.c2-marquee-right .c2-marquee-track {
+  animation: marquee-right 40s linear infinite;
+}
+
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 .os-logo-grid-1-2-3 {
@@ -620,7 +658,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 .os-logo-cell {
-  aspect-ratio: 1;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
   background: #fff;
   border-radius: 14px;
   display: flex;
@@ -653,6 +693,8 @@ a { text-decoration: none; color: inherit; }
   filter: brightness(0);
 }
 .os-logo-cell:hover .os-logo-img-light { opacity: 0.75; }
+
+.os-logo-cell img[alt="Outlook Calendar"] { transform: scale(1.6); }
 
 .os-integrations-footer-1-2-3 {
   display: flex;

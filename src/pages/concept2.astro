@@ -1,37 +1,38 @@
 ---
 import '../styles/global.css';
 
-const logos = [
+const row1 = [
   { file: 'Gmail.svg',                 alt: 'Gmail' },
   { file: 'Microsoft-Outlook.svg',     alt: 'Outlook' },
   { file: 'whatsApp.svg',              alt: 'WhatsApp' },
+  { file: 'Slack.svg',                 alt: 'Slack' },
   { file: 'Zoom1.svg',                 alt: 'Zoom' },
   { file: 'Google_Meet.svg',           alt: 'Google Meet' },
-  { file: 'Slack.svg',                 alt: 'Slack' },
-  { file: 'Linkedin.svg',              alt: 'LinkedIn' },
-  { file: 'facebook.svg',              alt: 'Facebook' },
-  { file: 'Instagram.svg',             alt: 'Instagram' },
-  { file: 'tiktok.svg',                alt: 'TikTok' },
-  { file: 'meta.svg',                  alt: 'Meta' },
-  { file: 'Google-ads.svg',            alt: 'Google Ads' },
   { file: 'Google-Calendar.svg',       alt: 'Google Calendar' },
   { file: 'Microsoft_Outlook_Cal.svg', alt: 'Outlook Calendar' },
-  { file: 'Google-Drive.svg',          alt: 'Google Drive' },
-  { file: 'Microsoft-Onedrive.svg',    alt: 'OneDrive' },
-  { file: 'Dropbox.svg',               alt: 'Dropbox' },
-  { file: 'box.svg',                   alt: 'Box' },
   { file: 'Stripe.svg',                alt: 'Stripe' },
-  { file: 'PayPal.svg',                alt: 'PayPal' },
-  { file: 'Square.svg',                alt: 'Square' },
   { file: 'xero.svg',                  alt: 'Xero' },
   { file: 'QuickBooks.svg',            alt: 'QuickBooks' },
+  { file: 'PayPal.svg',                alt: 'PayPal' },
+  { file: 'Square.svg',                alt: 'Square' },
   { file: 'Shopify.svg',               alt: 'Shopify' },
+];
+
+const row2 = [
+  { file: 'Instagram.svg',             alt: 'Instagram' },
+  { file: 'facebook.svg',              alt: 'Facebook' },
+  { file: 'Linkedin.svg',              alt: 'LinkedIn' },
+  { file: 'meta.svg',                  alt: 'Meta' },
+  { file: 'tiktok.svg',                alt: 'TikTok' },
+  { file: 'mailchimp-mono.svg',        alt: 'Mailchimp', light: true },
+  { file: 'Google-ads.svg',            alt: 'Google Ads' },
+  { file: 'Zapier.svg',                alt: 'Zapier' },
+  { file: 'Google-Drive.svg',          alt: 'Google Drive' },
+  { file: 'Dropbox.svg',               alt: 'Dropbox' },
+  { file: 'Microsoft-Onedrive.svg',    alt: 'OneDrive' },
+  { file: 'box.svg',                   alt: 'Box' },
   { file: 'Hubspot.svg',               alt: 'HubSpot' },
   { file: 'Salesforce.svg',            alt: 'Salesforce' },
-  { file: 'monday-mono.svg',           alt: 'Monday' },
-  { file: 'Trello.svg',                alt: 'Trello' },
-  { file: 'mailchimp-mono.svg',        alt: 'Mailchimp', light: true },
-  { file: 'Zapier.svg',                alt: 'Zapier' },
 ];
 ---
 
@@ -68,8 +69,9 @@ const logos = [
 
     /* ── Concept 2 hero — split layout ── */
     .c2-hero {
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 64px;
+      padding-bottom: 120px;
       display: flex;
       align-items: stretch;
       overflow: hidden;
@@ -240,24 +242,31 @@ const logos = [
   <section class="os-integrations" id="integrations">
     <div class="os-integrations-inner">
       <h2 class="os-integrations-headline-new">
-        One operational environment.<br />
-        Every platform you already use.<br />
-        Connected.
+        Connects to everything.<br />
+        Disrupts nothing.
       </h2>
-      <div class="os-logo-grid-1-2-3" id="logo-grid">
-        {logos.map(logo => (
-          <div class="os-logo-cell">
-            <img
-              class={logo.light ? 'os-logo-img-light' : 'os-logo-img'}
-              src={`/logos/${logo.file}`}
-              alt={logo.alt}
-              loading="lazy"
-            />
+      <div class="c2-marquee-wrap">
+        <div class="c2-marquee-row c2-marquee-left">
+          <div class="c2-marquee-track">
+            {[...row1, ...row1].map(logo => (
+              <div class="os-logo-cell">
+                <img class={logo.light ? 'os-logo-img-light' : 'os-logo-img'} src={`/logos/${logo.file}`} alt={logo.alt} loading="lazy" />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div class="c2-marquee-row c2-marquee-right">
+          <div class="c2-marquee-track">
+            {[...row2, ...row2].map(logo => (
+              <div class="os-logo-cell">
+                <img class={logo.light ? 'os-logo-img-light' : 'os-logo-img'} src={`/logos/${logo.file}`} alt={logo.alt} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <div class="os-integrations-footer-1-2-3">
-        <p class="os-integrations-count-1-2-3">4,000+ connections available. If it exists, it likely connects*</p>
+        <p class="os-integrations-count-1-2-3">If your business runs on it, 0S connects to it.*</p>
       </div>
     </div>
   </section>
