@@ -1,0 +1,163 @@
+---
+import '../../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXIQT 0S — Lab</title>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <style>
+    .lab-index {
+      min-height: 100vh;
+      padding: 80px 48px;
+      background: var(--bg);
+    }
+    .lab-index-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .lab-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lab-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lab-name {
+      font-family: 'Switzer', sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+    }
+    .lab-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 480px;
+    }
+    .lab-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lab-section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--border);
+    }
+    .lab-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .lab-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .lab-link:hover {
+      border-color: var(--dark);
+      background: rgba(14,17,22,0.02);
+    }
+    .lab-link-name {
+      font-family: 'Switzer', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    .lab-link-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .lab-builds {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .lab-build-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--dark);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .lab-build-link:hover { opacity: 0.85; }
+    .lab-build-name {
+      font-family: 'Switzer', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--bg);
+    }
+    .lab-build-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: rgba(245,246,248,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="lab-index">
+    <div class="lab-index-inner">
+
+      <div class="lab-header">
+        <p class="lab-title">EXIQT 0S</p>
+        <h1 class="lab-name">Lab</h1>
+        <p class="lab-desc">Isolated experiments and component explorations. Nothing here goes live until it wins. Open two tabs to compare.</p>
+      </div>
+
+      <div class="lab-section">
+        <p class="lab-section-label">Active builds</p>
+        <div class="lab-builds">
+          <a href="/concept2" class="lab-build-link">
+            <span class="lab-build-name">concept2.astro</span>
+            <span class="lab-build-note">active build</span>
+          </a>
+          <a href="/" class="lab-build-link" style="opacity:0.5;">
+            <span class="lab-build-name">index.astro</span>
+            <span class="lab-build-note">concept 1 — preserved reference</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lab-section">
+        <p class="lab-section-label">Experiments</p>
+        <div class="lab-links">
+          <div class="lab-link" style="opacity:0.4; pointer-events:none;">
+            <span class="lab-link-name">Nothing here yet</span>
+            <span class="lab-link-note">add pages to /src/pages/lab/</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
