@@ -43,7 +43,7 @@ function logoHTML(key) {
   if (imgs[key]) return imgs[key];
   if (key === 'imessage') return '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3C7.03 3 3 6.8 3 11.5c0 2.2.9 4.2 2.4 5.7L4 21l4.2-1.4c1.2.4 2.5.6 3.8.6 4.97 0 9-3.8 9-8.5S16.97 3 12 3z" fill="#1F2937"/><circle cx="8.5" cy="11.5" r="1.1" fill="#fff"/><circle cx="12" cy="11.5" r="1.1" fill="#fff"/><circle cx="15.5" cy="11.5" r="1.1" fill="#fff"/></svg>';
   if (key === 'docusign') return '<svg viewBox="0 0 24 24" fill="none"><path d="M5 2h9l5 5v15a1 1 0 01-1 1H5a1 1 0 01-1-1V3a1 1 0 011-1z" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5"/><path d="M14 2v5h5" stroke="#D1D5DB" stroke-width="0.5" fill="none"/><path d="M7 9h10M7 12h6" stroke="#C9CDD4" stroke-width="1.2" stroke-linecap="round"/><path d="M7 17q1.5-2.5 3 0t3-1.5t2.5 1.5" stroke="#1F2937" stroke-width="1.6" stroke-linecap="round" fill="none"/><path d="M6.5 19h11" stroke="#374151" stroke-width="0.8" stroke-linecap="round"/></svg>';
-  if (key === 'exiqt') return '<img src="/logos/EXIQT_LOGO_WHITE_V2.svg" width="32" height="14" style="display:block;object-fit:contain;">';
+  if (key === 'exiqt') return '<img src="/brand/exiqt-monogram-white.svg" width="32" height="14" style="display:block;object-fit:contain;">';
   return '';
 }
 
