@@ -1494,6 +1494,273 @@ a { text-decoration: none; color: inherit; }
   opacity: 0.7;
 }
 
+/* ── AI Employee add-on ── */
+.os-pricing-ai-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.os-pricing-ai {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.9) inset,
+    0 0 0 0.5px rgba(14,17,22,0.06),
+    0 4px 16px rgba(14,17,22,0.06);
+}
+
+.os-pricing-ai-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.os-pricing-ai-label {
+  font-family: 'Switzer', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+
+.os-pricing-ai-desc {
+  font-family: 'Switzer', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+.os-pricing-ai-tiers {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.os-pricing-ai-tier {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.os-pricing-ai-tier-featured {
+  background: var(--dark);
+  border-color: var(--dark);
+}
+
+.os-pricing-ai-tier-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--border);
+}
+
+.os-pricing-ai-tier-featured .os-pricing-ai-tier-name {
+  color: rgba(245,246,248,0.4);
+}
+
+.os-pricing-ai-tier-price {
+  font-family: 'Switzer', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--dark);
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.os-pricing-ai-tier-price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+
+.os-pricing-ai-tier-featured .os-pricing-ai-tier-price {
+  color: var(--bg);
+}
+
+.os-pricing-ai-tier-featured .os-pricing-ai-tier-price span {
+  color: rgba(245,246,248,0.5);
+}
+
+.os-pricing-ai-tier-detail {
+  font-family: 'Switzer', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.os-pricing-ai-tier-featured .os-pricing-ai-tier-detail {
+  color: rgba(245,246,248,0.5);
+}
+
+.os-pricing-usage-note {
+  font-family: 'Switzer', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* ════════════════════════════════════════
+   SECTORS
+════════════════════════════════════════ */
+.os-sectors {
+  padding: 120px 48px;
+  background: var(--dark);
+}
+
+.os-sectors-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.os-sectors-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+}
+
+.os-sectors-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,246,248,0.35);
+}
+
+.os-sectors-headline {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--bg);
+}
+
+.os-sectors-subline {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(245,246,248,0.5);
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+.os-sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.os-sector-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 28px 32px;
+  border: 1px solid rgba(245,246,248,0.08);
+  border-radius: 14px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.os-sector-card:hover {
+  background: rgba(245,246,248,0.04);
+  border-color: rgba(245,246,248,0.16);
+}
+
+.os-sector-card:hover .os-sector-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+.os-sector-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgba(245,246,248,0.25);
+  line-height: 1;
+}
+
+.os-sector-label {
+  font-family: 'Switzer', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--bg);
+  line-height: 1.1;
+}
+
+.os-sector-tag {
+  font-family: 'Switzer', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(245,246,248,0.45);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.os-sector-arrow {
+  font-family: 'Switzer', sans-serif;
+  font-size: 18px;
+  color: rgba(245,246,248,0.3);
+  line-height: 1;
+  transition: transform 0.2s, opacity 0.2s;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .os-sectors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .os-pricing-ai {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .os-pricing-ai-tiers {
+    width: 100%;
+  }
+  .os-pricing-ai-tier {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .os-sectors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
